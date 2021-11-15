@@ -5,10 +5,17 @@ body{
     display: flex;
     background-color: #5bc0be;
     font-family: 'Roboto Slab';
+    font-size: 17px;
     color: black;
 }
 
-h2, h1{
+h1{
+    color: white;
+    font-size: 32px;
+    font-family: 'Roboto Slab';
+}
+
+h2{
     color: white;
     font-family: 'Roboto Slab';
 }

@@ -36,27 +36,7 @@ app.listen(port, function () {
 
 module.exports = app;
 app.post("/cifrar", (req, res) => {
-    /*let archivo, mensaje;
-    let inputPassword = "";
-    let Contenido = "";
-    Contenido = req.files.subir_archivo.name;
-    inputPassword = req.body.Password;
-
-    console.log(inputPassword);
-    archivo = __dirname + '/uploads/' + Contenido;
-    mensaje = fs.readFileSync(archivo, 'utf8');
-    console.log("El contenido del txt es: ");
-    console.log(mensaje);
-    console.log("");
-    let encriptar = crypto.AES.encrypt(mensaje, inputPassword).toString();
-    console.log("El mensaje encriptado es: ");
-    console.log(encriptar);
-    console.log("");
-
-    fs.writeFileSync(__dirname + '/uploads/' + Contenido, "" + encriptar);
-
-    res.download(__dirname + '/uploads/' + Contenido);*/
-
+    
     const {publicKey, privateKey} = crypto.generateKeyPairSync('rsa', {
         modulusLength: 2048,
         publicKeyEncoding: {
@@ -106,28 +86,7 @@ app.post("/cifrar", (req, res) => {
 
 });
 app.post("/descifrar", (req, res) => {
-    /*let inputPassword = "";
-    let Contenido = "";
-    Contenido = req.files.subir_archivo.name;
-
-    const Contenido2 = Contenido.slice(0, -4);
-    inputPassword = req.body.Password;
-    console.log(inputPassword);
-
-    let archivo, mensaje;
-    archivo = __dirname + '/uploads/' + Contenido;
-    mensaje = fs.readFileSync(archivo, 'utf8');
-    console.log("El contenido del txt es: ");
-    console.log(mensaje);
-    console.log("");
-
-    let desencriptar = crypto.AES.decrypt(mensaje.toString(), inputPassword).toString(crypto.enc.Utf8);
-    console.log("El mensaje desencriptado es: ");
-    console.log(desencriptar.toString(crypto.enc.Utf8));
-    console.log("");
-    fs.writeFileSync(__dirname + '/uploads/' + Contenido2 + "(1).txt", "" + desencriptar);
-
-    res.download(__dirname + '/uploads/' + Contenido2 + "(1).txt");*/
+    
 
     let publicKey = "";
     let firma = "";
